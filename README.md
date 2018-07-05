@@ -16,7 +16,7 @@
 
 ## Compiling
 
-### Prerequisite
+### Prerequisites
 * Microsoft Visual Studio 2012+
 * [MySQL .Net Connector](https://dev.mysql.com/downloads/connector/net/6.10.html)
 * [NetworkComms.Net](http://www.networkcomms.net/)
@@ -25,7 +25,7 @@
 
 1. Open Windows Live Messenger.sln in Visual Studio
 
-2. Add reference to MySQL and NetworkComms
+2. Add references to MySQL and NetworkComms.Net
 
 3. Build Solution
 
@@ -34,7 +34,7 @@
 
 ### Database Installation
 
-Create a new MySQL database called msn.
+Create a new MySQL database. Call it msn.
 
 Import msn.sql found in the Database folder.
 

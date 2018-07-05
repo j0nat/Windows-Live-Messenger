@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLMClient", "WLMClient\WLMClient.csproj", "{2A562A8F-A41F-40E4-90D0-EA8FB25DDA6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLMData", "WLMData\WLMData.csproj", "{3D987AC0-33BC-4501-A814-A82819DC7A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLMServer", "WLMServer\WLMServer.csproj", "{1632B923-FAAF-458F-9FD4-E44E7C53D079}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A562A8F-A41F-40E4-90D0-EA8FB25DDA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A562A8F-A41F-40E4-90D0-EA8FB25DDA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A562A8F-A41F-40E4-90D0-EA8FB25DDA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A562A8F-A41F-40E4-90D0-EA8FB25DDA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D987AC0-33BC-4501-A814-A82819DC7A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D987AC0-33BC-4501-A814-A82819DC7A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D987AC0-33BC-4501-A814-A82819DC7A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D987AC0-33BC-4501-A814-A82819DC7A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1632B923-FAAF-458F-9FD4-E44E7C53D079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1632B923-FAAF-458F-9FD4-E44E7C53D079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1632B923-FAAF-458F-9FD4-E44E7C53D079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1632B923-FAAF-458F-9FD4-E44E7C53D079}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

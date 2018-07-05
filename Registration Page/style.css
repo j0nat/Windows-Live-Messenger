@@ -1,0 +1,95 @@
+html {
+  left: 0%;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+body
+{
+	overflow:auto;
+    background-color: WhiteSMoke;
+}
+
+#MainWindow
+{
+	background-image: url("\img\\header.png");
+    background-repeat: no-repeat;
+	background-position: center 25px;
+	
+	width: 880px;
+    height:900px;
+	
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+    border: 1px solid #ccc;
+    background-color: #FAFAFA;
+}
+
+#DownloadLinkDiv
+{
+	position:absolute;
+	bottom: 0; 
+	left:50%;
+	margin-bottom: 5px;
+	transform: translate(-50%, 0%);
+    font-size: 18px;
+}
+
+#ClientImageDiv
+{
+	width: 527px;
+	height: 691px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 55%;
+	left: 12%;
+	transform: translate(-12%, -50%);
+	background-image: url("\img\\LiveMessengerClient.png");
+    background-repeat: no-repeat;
+	background-position: center center;
+}
+
+a:link    { color: #c00 }  /* unvisited links */
+a:visited { color: #0c0 }  /* visited links   */
+a:hover   { color: #00c }  /* user hovers     */
+a:active  { color: #ccc }  /* active links    */
+
+#RegisterDiv
+{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 90%;
+	transform: translate(-90%, -50%)
+}
+
+form {
+  margin: auto;
+  position: relative;
+  width: 200px;
+  height: 350px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8c8c8c;
+  text-decoration: none;
+  padding: 10px;
+}
+
+input {
+    border: 1px solid #737373; 
+    padding: 2px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}

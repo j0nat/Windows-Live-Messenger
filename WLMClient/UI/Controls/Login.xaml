@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="WLMClient.UI.Controls.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WLMClient.UI.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="831.148" d:DesignWidth="348.566">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="195" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Name="background" Height="110" VerticalAlignment="Top" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" Stretch="Fill" StretchDirection="Both"></Image>
+
+            <Grid Grid.Row="0" VerticalAlignment="Top" Margin="0 17 4 0">
+                <Grid Width="98" Height="98" Margin="0 0 6 8" >
+                    <Image Name="imagePartnerAvatar" Stretch="None" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" />
+                </Grid>
+
+                <Image Width="140" Height="126" Name="imagePartnerFrame" Stretch="None" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="210" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="0">
+                <TextBlock Text="Sign in"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 11 0 0" FontSize="18" Foreground="#FF355A88"></TextBlock>
+                <TextBlock Text="Sign in with your Windows Live ID. Don't have one? Sign up." HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 40 0 20" Padding="0 0 0 0" Grid.Row="0" Grid.Column="1" Foreground="#FF333333"></TextBlock>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="236" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Row="1" CornerRadius="2" Grid.Column="1" BorderBrush="#FFD8E8F0" BorderThickness="1"></Border>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Image Name="checkAvailable" Width="16" Height="16" SnapsToDevicePixels="True"  RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" Stretch="Fill" StretchDirection="Both" UseLayoutRounding="True" PreviewMouseLeftButtonDown="checkAvailable_PreviewMouseLeftButtonDown"></Image>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Image Name="checkBusy" Width="16" Height="16" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" Stretch="Fill" StretchDirection="Both" UseLayoutRounding="True" PreviewMouseLeftButtonDown="checkBusy_PreviewMouseLeftButtonDown"></Image>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Image Name="checkAway" Width="16" Height="16" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" Stretch="Fill" StretchDirection="Both" UseLayoutRounding="True" PreviewMouseLeftButtonDown="checkAway_PreviewMouseLeftButtonDown"></Image>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Image Name="checkOffline" Width="16" Height="16" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
+       RenderOptions.EdgeMode="Aliased" Stretch="Fill" StretchDirection="Both" UseLayoutRounding="True" PreviewMouseLeftButtonDown="checkOffline_PreviewMouseLeftButtonDown"></Image>
+                        </Grid>
+
+                        <Border Name="borderAvailable" CornerRadius="2" Grid.Column="0" Width="16" Height="16" BorderBrush="#FFC7C7C7" BorderThickness="0"></Border>
+                        <Border Name="borderBusy" CornerRadius="2" Grid.Column="1" Width="16" Height="16" BorderBrush="#FFC7C7C7" BorderThickness="0"></Border>
+                        <Border Name="borderAway" CornerRadius="2" Grid.Column="2" Width="16" Height="16" BorderBrush="#FFC7C7C7" BorderThickness="0"></Border>
+                        <Border Name="borderOffline" CornerRadius="2" Grid.Column="3" Width="16" Height="16" BorderBrush="#FFC7C7C7" BorderThickness="0"></Border>
+                    </Grid>
+
+                    <TextBox Name="txtId" Height="24" Grid.Row="0"  VerticalAlignment="Center" Margin="5 5 5 0" FontSize="13" VerticalContentAlignment="Center"></TextBox>
+                    <PasswordBox Name="txtPass" Height="24" Grid.Row="1" VerticalAlignment="Center" Margin="5 5 5 0" VerticalContentAlignment="Center" PreviewKeyUp="txtPass_PreviewKeyUp"></PasswordBox>
+
+                    <CheckBox Name="checkRememberMe" Grid.Row="3" VerticalAlignment="Center" Margin="10 0 0 0" Content="Remember me" Foreground="#FF333333" Click="checkRememberMe_Click"></CheckBox>
+                    <CheckBox Name="checkRememberMyPassword" Grid.Row="4" VerticalAlignment="Center" Margin="10 0 0 0" Content="Remember my password" Foreground="#FF333333" Click="checkRememberMyPassword_Click"></CheckBox>
+                    <CheckBox Name="checkSignInAutomatically" Grid.Row="5" VerticalAlignment="Center" Margin="10 0 0 0" Content="Sign me in automatically" Foreground="#FF333333" Click="checkSignInAutomatically_Click"></CheckBox>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Button Name="btnLogin" Width="72" Height="23" Content="Sign in" Margin="0 18 0 0" Click="btnLogin_Click"></Button>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="#FFC9E7F3" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+    </Grid>
+</UserControl>

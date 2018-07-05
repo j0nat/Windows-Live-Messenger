@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A562A8F-A41F-40E4-90D0-EA8FB25DDA6B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WLMClient</RootNamespace>
+    <AssemblyName>WLMClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Content\Icons\33.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NetworkCommsDotNetComplete">
+      <HintPath>NetworkCommsDotNetComplete.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Notification\Popup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\Emoticons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\ChatWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\SaveData.cs" />
+    <Compile Include="Config\SaveDataManager.cs" />
+    <Compile Include="Config\Properties.cs" />
+    <Compile Include="Layout\Images.cs" />
+    <Compile Include="Layout\LoadResource.cs" />
+    <Compile Include="Locale\ManageChatWindows.cs" />
+    <Compile Include="Locale\Personal.cs" />
+    <Compile Include="Network\Client.cs" />
+    <Compile Include="Network\PacketHandler.cs" />
+    <Compile Include="Network\PacketHandling\Authentication.cs" />
+    <Compile Include="Network\PacketHandling\ConnectionClosed.cs" />
+    <Compile Include="Network\PacketHandling\PersonalUserUpdate.cs" />
+    <Compile Include="Network\PacketHandling\ReceiveContact.cs" />
+    <Compile Include="Network\PacketHandling\ReceiveContactDelete.cs" />
+    <Compile Include="Network\PacketHandling\ReceiveFriendRequest.cs" />
+    <Compile Include="Network\PacketHandling\ReceiveMessage.cs" />
+    <Compile Include="Network\PacketHandling\ReceiveNudge.cs" />
+    <Compile Include="Network\PacketHandling\ReceiveWritingStatus.cs" />
+    <Compile Include="Notification\FlashWindow.cs" />
+    <Compile Include="Notification\NotificationManager.cs" />
+    <Compile Include="Notification\Popup.xaml.cs">
+      <DependentUpon>Popup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Images\Emoticons.cs" />
+    <Compile Include="Resource\Images\Identifiers.cs" />
+    <Compile Include="Resource\Images\Attributes.cs" />
+    <Compile Include="Resource\Sounds\Identifiers.cs" />
+    <Compile Include="Resource\Sounds\Player.cs" />
+    <Compile Include="UI\Controls\Emoticons.xaml.cs">
+      <DependentUpon>Emoticons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\WinForms\FrmAddNewFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\WinForms\FrmAddNewFriend.Designer.cs">
+      <DependentUpon>FrmAddNewFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\WinForms\FrmFriendRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\WinForms\FrmFriendRequest.Designer.cs">
+      <DependentUpon>FrmFriendRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\WinForms\FrmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\WinForms\FrmOptions.Designer.cs">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Data\Enums\AvatarSize.cs" />
+    <Compile Include="UI\Data\ContactListEntryData.cs" />
+    <Compile Include="UI\Data\Enums\ButtonState.cs" />
+    <Compile Include="UI\Data\TextParser.cs" />
+    <Compile Include="UI\Windows\ChatWindow.xaml.cs">
+      <DependentUpon>ChatWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\WinForms\FrmAddNewFriend.resx">
+      <DependentUpon>FrmAddNewFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Messenger.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WLMData\WLMData.csproj">
+      <Project>{3d987ac0-33bc-4501-a814-a82819dc7a79}</Project>
+      <Name>WLMData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icons\161.png" />
+    <Resource Include="Content\Icons\162.png" />
+    <Resource Include="Content\Icons\163.png" />
+    <Resource Include="Content\Icons\164.png" />
+    <Resource Include="Content\Icons\171.png" />
+    <Resource Include="Content\Icons\46.ico" />
+    <Resource Include="Content\Icons\60.ico" />
+    <Resource Include="Content\Icons\Icon_84.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Icons\33.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Interface\arrow.png" />
+    <Resource Include="Content\Interface\chatFrame.png" />
+    <Resource Include="Content\Interface\chatWindowButtons.png" />
+    <Resource Include="Content\Interface\chatWindowGameTopBar.png" />
+    <Resource Include="Content\Interface\chatWindowSideBar.png" />
+    <Resource Include="Content\Interface\chatWindowTopBar.png" />
+    <Resource Include="Content\Interface\chatWindowTriangle.png" />
+    <Resource Include="Content\Interface\default-messenger-skinny.jpg" />
+    <Resource Include="Content\Interface\default-messenger-wide.jpg" />
+    <Resource Include="Content\Interface\mainWindowSmallIcons.png" />
+    <Resource Include="Content\Interface\paragraphRectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Other\BottomAd.png" />
+    <Resource Include="Content\Other\emoticons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\WAV\nudge.wav" />
+    <Resource Include="Content\WAV\online.wav" />
+    <Resource Include="Content\WAV\type.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

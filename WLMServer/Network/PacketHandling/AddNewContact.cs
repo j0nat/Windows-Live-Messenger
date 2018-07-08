@@ -25,7 +25,7 @@ namespace WLMServer.Network.PacketHandling
 
         protected void AddContact(PacketHeader header, Connection connection, string userID)
         {
-            if (server.accountManager.GetUser(userID) != null)
+            if (server.accountManager.IsUserInDatabase(userID))
             {
                 ConnectedUser senderUser = server.GetConnectedUser(connection);
                 ContactList senderContactList = senderUser.contactList;

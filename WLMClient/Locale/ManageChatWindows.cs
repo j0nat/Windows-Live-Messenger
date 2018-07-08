@@ -41,6 +41,7 @@ namespace WLMClient.Locale
                 if (Personal.OPEN_CHAT_WINDOWS.Contains(chatWindow))
                 {
                     Personal.OPEN_CHAT_WINDOWS.Remove(chatWindow);
+
                     chatWindow.CloseWindow();
                 }
             }
@@ -54,7 +55,6 @@ namespace WLMClient.Locale
             {
                 ChatWindow foundChatWindow = GetChatWindow(userID);
 
-                foundChatWindow.CloseWindow();
                 RemoveChatWindow(foundChatWindow);
             }
         }

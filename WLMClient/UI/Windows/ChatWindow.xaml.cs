@@ -257,9 +257,24 @@ namespace WLMClient.UI.Windows
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ManageChatWindows.RemoveChatWindow(this);
+            if (!isWindowClosing)
+            {
+                isWindowClosing = true;
 
-            isWindowClosing = true;
+                ManageChatWindows.RemoveChatWindow(this);
+            }
+        }
+
+        public void CloseWindow()
+        {
+            if (!isWindowClosing)
+            {
+                isWindowClosing = true;
+
+                ManageChatWindows.RemoveChatWindow(this);
+
+                this.Close();
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -440,13 +455,6 @@ namespace WLMClient.UI.Windows
 
             AddNudgeMessage("You have just sent a Nudge!");
             Network.Client.SendNudge(contactUserInfo.id);
-        }
-
-        public void CloseWindow()
-        {
-            isWindowClosing = true;
-
-            ManageChatWindows.RemoveChatWindow(this);
         }
 
         public void AddNudgeMessage(string text)

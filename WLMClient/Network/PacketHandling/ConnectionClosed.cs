@@ -18,17 +18,29 @@ namespace WLMClient.Network.PacketHandling
     {
         public ConnectionClosed(MainWindow mainWindow) : base(mainWindow) { }
 
+        private NetworkComms.ConnectionEstablishShutdownDelegate closeHandler;
+
         public override void InitializePacket()
         {
-            NetworkComms.AppendGlobalConnectionCloseHandler(Closed);
+            closeHandler = new NetworkComms.ConnectionEstablishShutdownDelegate((Connection connection) =>
+            {
+                mainWindow.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Action)(() =>
+                {
+                    mainWindow.ConnectionClosedLogOut();
+                }));
+            });
+
+            Open();
         }
 
-        protected void Closed(Connection connection)
+        public void Open()
         {
-            mainWindow.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Action)(() =>
-            {
-                mainWindow.ConnectionClosedLogOut();
-            }));
+            NetworkComms.AppendGlobalConnectionCloseHandler(closeHandler);
+        }
+
+        public void Close()
+        {
+            NetworkComms.RemoveGlobalConnectionCloseHandler(closeHandler);
         }
     }
 }

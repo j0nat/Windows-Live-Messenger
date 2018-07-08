@@ -23,7 +23,7 @@ namespace WLMClient.Network
         public static string version = "1.0.0";
         public static ConnectionInfo connectionInfo { get; set; }
 
-        private static PacketHandler ConnectionedClosed, authentication, receiveContact, receiveMessage, receiveNudge,
+        private static PacketHandler connectionedClosed, authentication, receiveContact, receiveMessage, receiveNudge,
             receiveContactDelete, receiveWritingStatus, receiveFriendRequest, personalUserUpdate;
 
         public static void Load(MainWindow mainWindow)
@@ -35,7 +35,7 @@ namespace WLMClient.Network
             receiveFriendRequest = new ReceiveFriendRequest(mainWindow);
             personalUserUpdate = new PersonalUserUpdate(mainWindow);
             receiveContactDelete = new ReceiveContactDelete(mainWindow);
-            ConnectionedClosed = new ConnectionClosed(mainWindow);
+            connectionedClosed = new ConnectionClosed(mainWindow);
             receiveWritingStatus = new ReceiveWritingStatus(mainWindow);
 
             Personal.USER_CONTACTS = new List<UserInfo>();
@@ -51,7 +51,11 @@ namespace WLMClient.Network
 
         public static void Connect()
         {
+            ((ConnectionClosed)connectionedClosed).Close();
+
             NetworkComms.Shutdown();
+
+            ((ConnectionClosed)connectionedClosed).Open();
 
             try
             {

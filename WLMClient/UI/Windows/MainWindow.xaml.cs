@@ -24,6 +24,8 @@ using WLMData.Data.Packets;
 
 using System.Configuration;
 
+using System.Threading;
+
 namespace WLMClient.UI.Windows
 {
     /// <summary>
@@ -52,6 +54,53 @@ namespace WLMClient.UI.Windows
             controlPanel.Children.Add(pageLogin);
 
             this.Icon = new BitmapImage(new Uri(Resource.Images.Identifiers.APP_ICON_STATUS_OFFLINE, UriKind.Absolute));
+
+            StartUserStatusWorker();
+        }
+
+        private void StartUserStatusWorker()
+        {
+            Thread statusWorker = new Thread(UserStatusWorker);
+            statusWorker.Start();
+        }
+
+        private void UserStatusWorker()
+        {
+            int olderUserStatus = 0;
+            bool isUserStatusAway = false;
+
+            while (true)
+            {
+                if (pageMain != null)
+                {
+                    int lastUpdate = (int)Locale.LastUserInput.GetLastInputTime();
+
+                    if (lastUpdate > 150)
+                    {
+                        if (Locale.Personal.USER_INFO.status != (int)UserStatus.Offline && !isUserStatusAway)
+                        {
+                            olderUserStatus = Locale.Personal.USER_INFO.status;
+
+                            Locale.Personal.USER_INFO.status = Convert.ToInt16(UserStatus.Away);
+                            Network.Client.SendUserUpdate();
+
+                            isUserStatusAway = true;
+                        }
+                    }
+                    else
+                    {
+                        if (isUserStatusAway)
+                        {
+                            Locale.Personal.USER_INFO.status = olderUserStatus;
+                            Network.Client.SendUserUpdate();
+
+                            isUserStatusAway = false;
+                        }
+                    }
+                }
+
+                Thread.Sleep(2500);
+            }
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)

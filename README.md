@@ -13,6 +13,7 @@
 + Save ID & Password
 + Auto Login
 + Notification Bubble
++ Automatic Away Status (AFK 150 Seconds)
 
 ## Compiling
 

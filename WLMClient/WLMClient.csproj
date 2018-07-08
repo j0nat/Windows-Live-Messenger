@@ -97,6 +97,7 @@
     <Compile Include="Config\Properties.cs" />
     <Compile Include="Layout\Images.cs" />
     <Compile Include="Layout\LoadResource.cs" />
+    <Compile Include="Locale\LastUserInput.cs" />
     <Compile Include="Locale\ManageChatWindows.cs" />
     <Compile Include="Locale\Personal.cs" />
     <Compile Include="Network\Client.cs" />

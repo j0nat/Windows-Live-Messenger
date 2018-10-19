@@ -120,6 +120,9 @@ The client consists of the following files:
 + WLMData.dll
 + NetworkCommsDotNetComplete.dll
 
+Change the encryption key in the WLMClient\Config\Properties.cs file:
+```        public static string SERVER_ENCRYPTION_KEY = "CHANGEME";```
+
 After compiling open Messenger.config and insert the server address and port number.
 
 ```xml

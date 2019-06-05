@@ -1,22 +1,22 @@
 html {
-  left: 0%;
-  position: relative;
-  overflow-x: hidden;
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -ms-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
+	left: 0%;
+	position: relative;
+	overflow-x: hidden;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+	color: #666666;
 }
 
-body
-{
+body { 
 	overflow:auto;
-    background-color: WhiteSMoke;
+    /*background-color: WhiteSMoke;*/
+	background-color: #fdfdfd;
 }
 
-#MainWindow
-{
+#MainWindow {
 	background-image: url("\img\\header.png");
     background-repeat: no-repeat;
 	background-position: center 25px;
@@ -30,42 +30,46 @@ body
 	left: 0;
 	right: 0;
 
-    border: 1px solid #ccc;
-    background-color: #FAFAFA;
+    /*border: 1px solid #ccc;
+    background-color: #FAFAFA;*/
 }
 
-#DownloadLinkDiv
-{
+#DownloadLinkDiv {
 	position:absolute;
 	bottom: 0; 
-	left:50%;
-	margin-bottom: 5px;
+	left:33%;
+	margin-bottom: 10px;
 	transform: translate(-50%, 0%);
-    font-size: 18px;
+    font-size: 16px;
+	font-weight: bold;
+	background-color: #6699ff;
+	color: white;
+	font-family: helvetica;
+	padding: 0.75em 1.6em;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
-#ClientImageDiv
-{
-	width: 527px;
-	height: 691px;
+#ClientImageDiv {
+	width: 540px;
+	height: 706px;
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 55%;
-	left: 12%;
-	transform: translate(-12%, -50%);
+	top: 15%;
+	left: 5%;
+	transform: scale(1.0f);
 	background-image: url("\img\\LiveMessengerClient.png");
     background-repeat: no-repeat;
 	background-position: center center;
 }
 
-a:link    { color: #c00 }  /* unvisited links */
-a:visited { color: #0c0 }  /* visited links   */
-a:hover   { color: #00c }  /* user hovers     */
-a:active  { color: #ccc }  /* active links    */
+a:link    { color: #FFF; text-decoration: none; }
+a:visited { color: #FFF; text-decoration: none; }
+a:hover   { color: #FFF; text-decoration: none; }
+a:active  { color: #FFF; text-decoration: none; }
 
-#RegisterDiv
-{
+#RegisterDiv {
 	margin: 0;
 	padding: 0;
 	position: absolute;
@@ -75,21 +79,49 @@ a:active  { color: #ccc }  /* active links    */
 }
 
 form {
-  margin: auto;
-  position: relative;
-  width: 200px;
-  height: 350px;
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: #8c8c8c;
-  text-decoration: none;
-  padding: 10px;
+	position: relative;
+	width: 200px;
+	height: 350px;
+	font-family: sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #8c8c8c;
+	text-decoration: none;
+	display: inline-block;
+	padding: 3px;
+	margin: 0px;
 }
 
 input {
-    border: 1px solid #737373; 
-    padding: 2px;
-    background: rgba(255,255,255,0.5);
+	width: 95%;
+    border: 0; 
+    padding: 4px;
     margin: 0 0 10px 0;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+}
+
+form h1 {
+	text-align: center;
+	color: #66b3ff;
+}
+
+form span {
+
+	color: #5c85d6;
+}
+
+.button {
+	background-color: #80bfff;
+	border: none;
+	color: white;
+	width: 98%;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	margin: 14px 2px;
+	cursor: pointer;
 }

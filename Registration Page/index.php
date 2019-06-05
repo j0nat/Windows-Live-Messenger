@@ -7,7 +7,6 @@
 </head>
 
 <body>
-<center>
 <div id="MainWindow">
 <div id="ClientImageDiv"></div>
 <div id="RegisterDiv">
@@ -97,33 +96,32 @@ if (isset($_POST['submit']))
 ?>
 </b></center>
 <form action="" method="post">
-<center>
+
   <div>
-    <h1>Register</h1>
+    <h1>REGISTER</h1>
     <label>
-      <span>Display Name</span><br><input id="name" type="text" name="name" maxlength="20" />
+      <span>Display Name</span><br><input placeholder="" autocomplete="off" id="name" type="text" name="name" maxlength="20" />
     </label>
 <br>
     <label>
-      <span>Login ID</span><br><input id="email" type="text" name="id" maxlength="12" />
+      <span>Login ID</span><br><input placeholder="" autocomplete="off" id="email" type="text" name="id" maxlength="12" />
     </label>
 <br>
     <label>
-      <span>Password</span><br><input id="email" type="password" name="pass" maxlength="20" />
+      <span>Password</span><br><input placeholder="" autocomplete="off" id="email" type="password" name="pass" maxlength="20" />
     </label>
 <br>
     <label>
-      <input type="submit" value="submit" name="submit" style="width: 200px; height: 50px;" />
+      <input type="submit" value="register" name="submit" class="button" />
     </label>
   </div>
-  </center>
+
 </form>
 </div>
 
 <div id="DownloadLinkDiv">
-<center><a href="#">DOWNLOAD BETA CLIENT</a></center>
+<a href="#">DOWNLOAD MESSENGER</a>
 </div>
 </div>
-</center>
 </body>
 </html>

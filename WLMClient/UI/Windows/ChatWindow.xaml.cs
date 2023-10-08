@@ -20,6 +20,7 @@ using WLMClient.Locale;
 using WLMClient.UI.Data;
 
 using System.Threading;
+using System.Diagnostics;
 
 namespace WLMClient.UI.Windows
 {

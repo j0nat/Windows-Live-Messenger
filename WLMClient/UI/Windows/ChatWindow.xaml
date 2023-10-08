@@ -81,10 +81,14 @@
                     </Grid>
 
                     <Grid Grid.Row="1" UseLayoutRounding="True">
-                        <RichTextBox Name="txtChat" Background="Transparent" BorderThickness="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0 0 0 32" FontStyle="Normal" FontSize="13" Padding="2 0 0 0" Foreground="Black" IsReadOnly="True" AcceptsReturn="False">
+                        <RichTextBox Name="txtChat" Background="Transparent" BorderThickness="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0 0 0 32" FontStyle="Normal" FontSize="13" Padding="2 0 0 0" Foreground="Black" IsReadOnly="True" IsDocumentEnabled="True" AcceptsReturn="False">
                             <RichTextBox.Resources>
                                 <Style TargetType="ScrollBar">
                                     <Setter Property="Background" Value="Transparent"/>
+                                </Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Cursor" Value="Hand" />
+                                    <EventSetter Event="MouseLeftButtonDown" Handler="Hyperlink_MouseLeftButtonDown" />
                                 </Style>
                             </RichTextBox.Resources>
                         </RichTextBox>

@@ -527,5 +527,11 @@ namespace WLMClient.UI.Windows
                 this.Left = this.Left + left;
             }));
         }
+
+        public void Hyperlink_MouseLeftButtonDown(object sender, MouseEventArgs e)
+        {
+            var hyperlink = (Hyperlink)sender;
+            Process.Start(hyperlink.NavigateUri.ToString());
+        }
     }
 }

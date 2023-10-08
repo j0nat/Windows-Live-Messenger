@@ -18,8 +18,10 @@ namespace WLMServer.Database
         {
             connectionString = String.Format("server={0};user id={1}; password={2}; database=msn; pooling=false; Charset=utf8; Keepalive=60;",
                 Config.Properties.DATABASE_HOST, Config.Properties.DATABASE_ID, Config.Properties.DATABASE_PASSWORD);
-            dbConnection = new MySqlConnection(connectionString);
+            using (dbConnection = new MySqlConnection(connectionString))
+            {
             dbConnection.Open();
+            }
         }
 
         public void CheckDatabaseAccess()
@@ -34,13 +36,15 @@ namespace WLMServer.Database
             {
                 try
                 {
-                    MySqlCommand command = new MySqlCommand();
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
                     command.Connection = dbConnection;
                     command.CommandType = CommandType.Text;
                     command.CommandText = "SELECT 1;";
                     command.Prepare();
 
                     command.ExecuteNonQuery();
+                    }
                 }
                 catch
                 {

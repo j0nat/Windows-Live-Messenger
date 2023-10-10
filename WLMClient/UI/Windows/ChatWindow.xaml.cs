@@ -20,6 +20,7 @@ using WLMClient.Locale;
 using WLMClient.UI.Data;
 
 using System.Threading;
+using System.Diagnostics;
 
 namespace WLMClient.UI.Windows
 {
@@ -526,6 +527,12 @@ namespace WLMClient.UI.Windows
                 this.Top = this.Top + top;
                 this.Left = this.Left + left;
             }));
+        }
+
+        public void Hyperlink_MouseLeftButtonDown(object sender, MouseEventArgs e)
+        {
+            var hyperlink = (Hyperlink)sender;
+            Process.Start(hyperlink.NavigateUri.ToString());
         }
     }
 }

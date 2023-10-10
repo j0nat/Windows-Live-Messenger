@@ -81,10 +81,14 @@
                     </Grid>
 
                     <Grid Grid.Row="1" UseLayoutRounding="True">
-                        <RichTextBox Name="txtChat" Background="Transparent" BorderThickness="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0 0 0 32" FontStyle="Normal" FontSize="13" Padding="2 0 0 0" Foreground="Black" IsReadOnly="True" AcceptsReturn="False">
+                        <RichTextBox Name="txtChat" Background="Transparent" BorderThickness="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0 0 0 32" FontStyle="Normal" FontSize="13" Padding="2 0 0 0" Foreground="Black" IsReadOnly="True" IsDocumentEnabled="True" AcceptsReturn="False">
                             <RichTextBox.Resources>
                                 <Style TargetType="ScrollBar">
                                     <Setter Property="Background" Value="Transparent"/>
+                                </Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Cursor" Value="Hand" />
+                                    <EventSetter Event="MouseLeftButtonDown" Handler="Hyperlink_MouseLeftButtonDown" />
                                 </Style>
                             </RichTextBox.Resources>
                         </RichTextBox>
@@ -92,7 +96,7 @@
                     </Grid>
 
                     <Grid Grid.Row="2" Margin="-2 0 17 41" Background="#FFF9F9F9">
-                        <RichTextBox Name="txtSend" Background="#FFF9F9F9" BorderThickness="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0 0 0 35" FontStyle="Normal" FontSize="13" Padding="2 4 0 0" Foreground="Black" TextChanged="txtSend_TextChanged" PreviewKeyUp="txtSend_PreviewKeyUp" AcceptsReturn="True" PreviewKeyDown="txtSend_PreviewKeyDown" PreviewDrop="txtSend_PreviewDrop" AllowDrop="True" PreviewDragOver="txtSend_PreviewDragOver"></RichTextBox>
+                        <RichTextBox Name="txtSend" Background="#FFF9F9F9" BorderThickness="0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" Margin="0 0 0 35" FontStyle="Normal" FontSize="13" Padding="2 4 0 0" Foreground="Black" TextChanged="txtSend_TextChanged" PreviewKeyUp="txtSend_PreviewKeyUp" AcceptsReturn="True" PreviewKeyDown="txtSend_PreviewKeyDown" PreviewDrop="txtSend_PreviewDrop" AllowDrop="True" PreviewDragOver="txtSend_PreviewDragOver" SpellCheck.IsEnabled="True"></RichTextBox>
                         <Image Width="1" Margin="-1 0 0 0" HorizontalAlignment="Left" Stretch="Fill" Source="/WLMClient;component/Content/Interface/chatWindowSideBar.png"></Image>
                         <Image SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="NearestNeighbor"
        RenderOptions.EdgeMode="Aliased" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-13 0 0 0" StretchDirection="Both" Width="13" Height="44" Source="/WLMClient;component/Content/Interface/chatWindowTriangle.png" />
